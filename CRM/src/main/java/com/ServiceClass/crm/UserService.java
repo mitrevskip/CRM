@@ -13,6 +13,8 @@ import com.models.crm.User;
  */
 public interface UserService {
     
+    User findById(int id);
+    
     void saveUser(User u);
     void updateUser(User u);
     void deleteUser(User u);
