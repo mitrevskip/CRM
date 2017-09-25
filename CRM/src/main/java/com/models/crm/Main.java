@@ -14,16 +14,19 @@ public class Main {
         User user = new User();
         user.setUserName("Petar");
         user.setUserID(1);
+        user.setEmail("mitrevski.p@gmail.com");
+        user.setPassword("traktor");
+        user.setCreateTime(0);
 
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        session.save(user);
-
-        session.getTransaction().commit();
-        session.close();
-        sessionFactory.close();
+        try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+            
+            session.save(user);
+            
+            session.getTransaction().commit();
+            session.close();
+        }
 
     }
 
