@@ -5,6 +5,7 @@
  */
 package com.models.crm;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Reservations")
-public class Reservations {
+public class Reservations implements Serializable {
     @Id
     private int reservationID;
     private int roomID;

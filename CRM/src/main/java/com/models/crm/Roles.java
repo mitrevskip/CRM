@@ -5,6 +5,7 @@
  */
 package com.models.crm;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,10 +13,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Roles")
-public class Roles {
+public class Roles implements Serializable {
     @Id
     private int roleID;
-    private int admin;
+    private int administrator;
 
     public int getRoleID() {
         return roleID;
