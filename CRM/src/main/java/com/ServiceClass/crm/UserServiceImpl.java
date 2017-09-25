@@ -30,6 +30,10 @@ public class UserServiceImpl implements UserService {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param u
+     */
     @Override
     public void deleteUser(User u) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
