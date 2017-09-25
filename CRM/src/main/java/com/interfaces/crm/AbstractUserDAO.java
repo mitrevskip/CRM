@@ -11,4 +11,10 @@ package com.interfaces.crm;
  */
 public abstract class AbstractUserDAO {
     
+    public AbstractUserDAO()
+    {
+        
+        
+    }
+    
 }
