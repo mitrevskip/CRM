@@ -5,13 +5,14 @@
  */
 package com.models.crm;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Rooms")
-public class Rooms {
+public class Rooms implements Serializable {
     @Id
     private int roomID;
     private int capacity;
