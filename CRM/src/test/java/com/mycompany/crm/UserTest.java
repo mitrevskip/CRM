@@ -5,6 +5,7 @@
  */
 package com.mycompany.crm;
 
+import com.models.crm.User;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
