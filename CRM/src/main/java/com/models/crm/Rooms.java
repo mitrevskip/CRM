@@ -5,21 +5,18 @@
  */
 package com.models.crm;
 
-/**
- *
- * @author Petar
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Rooms")
 public class Rooms {
+    @Id
     private int roomID;
     private int capacity;
     private String roomName;
-    private String desc;
-
-    public Rooms(int roomID) {
-        this.roomID = roomID;
-    }
-    
-    
+    private String description;
 
     public int getRoomID() {
         return roomID;
@@ -28,6 +25,32 @@ public class Rooms {
     public void setRoomID(int roomID) {
         this.roomID = roomID;
     }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+  
     
     
 }
