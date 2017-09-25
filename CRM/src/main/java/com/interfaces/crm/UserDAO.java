@@ -5,10 +5,17 @@
  */
 package com.interfaces.crm;
 
+import com.models.crm.User;
+
 /**
  *
  * @author Mario HP
  */
 public interface UserDAO {
+    
+    void saveUserDAO(User u);
+    void updateUserDAO(User u);
+    void deleteUserDAO(User u);
+    
     
 }
