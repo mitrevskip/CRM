@@ -5,27 +5,26 @@
  */
 package com.models.crm;
 
-import java.lang.annotation.Annotation;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
-
-        public class Main {
+import org.hibernate.cfg.Configuration;
+public class Main {
 
     public static void main(String[] args) {
         User user = new User();
         user.setUserName("Petar");
         user.setUserID(1);
-        
-        SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        
+
         session.save(user);
-        
-        session
-        
-        
+
+        session.getTransaction().commit();
+        session.close();
+        sessionFactory.close();
+
     }
 
 }
