@@ -3,6 +3,7 @@ package com.models.crm;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "USERS")
 public class User implements Serializable {
 
-    @Id
+    @Id @GeneratedValue
     private int userID;
     private String email;
     private String userName;
@@ -25,9 +26,6 @@ public class User implements Serializable {
         return userID;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
 
     public String getEmail() {
         return email;
