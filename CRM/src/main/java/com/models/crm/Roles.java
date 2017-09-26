@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "ROLES")
 public class Roles implements Serializable {
     @Id
     private int roleID;
