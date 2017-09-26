@@ -5,18 +5,25 @@
  */
 package com.models.crm;
 
+import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ROOMS")
 public class Rooms implements Serializable {
-    @Id
+    @Id @GeneratedValue @NotNull
+    @Column(name = "room ID")
     private int roomID;
+    @Column(name = "capacity")
     private int capacity;
+    @Column(name = "room name")
     private String roomName;
+    @Column (name = "description")
     private String description;
 
     public int getRoomID() {
