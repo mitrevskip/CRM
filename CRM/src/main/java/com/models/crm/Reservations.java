@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * @author Petar
  */
 @Entity
-@Table(name = "Reservations")
+@Table(name = "RESERVATIONS")
 public class Reservations implements Serializable {
     @Id
     private int reservationID;
