@@ -1,4 +1,4 @@
-package com.models.crm;
+package com.reservations.crm;
 
 import java.io.Serializable;
 import java.time.Duration;

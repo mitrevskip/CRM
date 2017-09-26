@@ -42,7 +42,7 @@ public class UserDAO implements IUserDAO {
     public void updateUser(User user) {
         User usr1 = getUserById(user.getUserId());
         usr1.setUserName(userName.getUserName());
-        usr1.setEmail(user.getEmail());
+        usr1.setEmail(email.getEmail());
         usr1.setPassword(user.getPassword());
         entityManager.flush();
     }
