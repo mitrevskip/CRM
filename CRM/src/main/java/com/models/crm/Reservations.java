@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.models.crm;
 
 import java.io.Serializable;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.Period;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,18 +15,37 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "RESERVATIONS")
 public class Reservations implements Serializable {
+
+    static final int MINUTES_PER_HOUR = 60;
+    static final int SECONDS_PER_MINUTE = 60;
+    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
+
     @Id
-    private int reservationID;
+    private int resID;
     private int roomID;
-    private int dateForReservations;
-    private int timeFromReservations;
-    private int timeToReservation;
+    LocalDateTime meetingStart;
+    LocalDateTime meetingEnd;
+    Duration meetingLength;
 
-    public int getReservationID() {
-        return reservationID;
+    Period period = getPeriod(meetingStart, meetingEnd);
+//    long time[] = getTime(meetingStart, meetingEnd);
+
+    private static Period getPeriod(LocalDateTime meetingStart, LocalDateTime now) {
+        return Period.between(meetingStart.toLocalDate(), now.toLocalDate());
     }
 
-    public void setReservationID(int reservationID) {
-        this.reservationID = reservationID;
-    }
+//    private static long[] getTime(LocalDateTime now, LocalDateTime meetingStart) {
+//        LocalDateTime today = LocalDateTime.of(now.getYear(),
+//                now.getMonthValue(), now.getDayOfMonth(), meetingStart.getHour(), meetingStart.getMinute(), meetingStart.getSecond());
+//        Duration duration = Duration.between(now, meetingStart);
+//
+//        long seconds = duration.getSeconds();
+//
+//        long hours = seconds / SECONDS_PER_HOUR;
+//        long minutes = ((seconds % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE);
+//        long secs = (seconds % SECONDS_PER_MINUTE);
+//
+//        return new long[]{hours, minutes, secs};
+//    }
+
 }

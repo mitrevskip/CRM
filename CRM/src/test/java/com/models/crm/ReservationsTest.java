@@ -37,29 +37,8 @@ public class ReservationsTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getReservationID method, of class Reservations.
-     */
     @Test
-    public void testGetReservationID() {
-        System.out.println("getReservationID");
-        Reservations instance = new Reservations();
-        int expResult = 0;
-        int result = instance.getReservationID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setReservationID method, of class Reservations.
-     */
-    @Test
-    public void testSetReservationID() {
-        System.out.println("setReservationID");
-        int reservationID = 0;
-        Reservations instance = new Reservations();
-        instance.setReservationID(reservationID);
+    public void testSomeMethod() {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
