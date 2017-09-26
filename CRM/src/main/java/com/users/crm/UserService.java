@@ -46,4 +46,11 @@ public class UserService implements IUserService {
         userDAO.deleteUser(userId);
     }
 
+    @Override
+    public boolean userExists(String userName, String email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
 }
