@@ -1,5 +1,5 @@
 
-package com.models.crm;
+package com.users.crm;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -16,7 +16,7 @@ public class User implements Serializable {
 
     @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userID;
+    private int userId;
     
     @Column(name = "email",unique = true)
     private String email;
@@ -28,8 +28,8 @@ public class User implements Serializable {
     private String password;
     
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
 
@@ -58,3 +58,4 @@ public class User implements Serializable {
     }
 
 }
+

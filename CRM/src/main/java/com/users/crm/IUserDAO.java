@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ServiceClass.crm;
+package com.users.crm;
 
-import com.models.crm.User;
 import java.util.List;
 
-
-public interface IUserService {
-    
+/**
+ *
+ * @author Petar
+ */
+public interface IUserDAO {
     List<User> getAllUsers();
-    User getUserById(int userID);
-    boolean addUser(User user);
+    User getUserById(int userId);
+    void addUser(User user);
     void updateUser(User user);
-    void deleteUser(int userID);
+    void deleteUser(int userId);
+    boolean userExists(String userName, String email);
 }
