@@ -26,7 +26,7 @@ public class UserDAO implements IUserDAO {
     public User getUserById(int userId) {
         return entityManager.find(User.class, userId);
     }
-
+    @SuppressWarnings("unchecked")
     @Override
     public List<User> getAllUsers() {
         String hq1 = "FROM User as usr1 ORDER BY usr1.userId";
@@ -41,15 +41,21 @@ public class UserDAO implements IUserDAO {
     @Override
     public void updateUser(User user) {
         User usr1 = getUserById(user.getUserId());
-        usr1.setUserName(userName.getUserName());
-        usr1.setEmail(email.getEmail());
+        usr1.setUserName(user.getUserName());
+        usr1.setEmail(user.getEmail());
         usr1.setPassword(user.getPassword());
         entityManager.flush();
     }
-
+    
+    @Override
+    public void deleteUser (int userId) {
+        entityManager.remove(getUserById(userId));
+    }
+    
+    
     @Override
     public boolean userExists(String userName, String email) {
-        String hq1 = "FROM Article as usr1 WHERE usr1.userName = ? and usr1.email = >";
+        String hq1 = "FROM Article as usr1 WHERE usr1.userName = ? and usr1.email = ?";
         int count = entityManager.createQuery(hq1).setParameter(1, userName)
                 .setParameter(2, email).getResultList().size();
         return count > 0 ? true : false;

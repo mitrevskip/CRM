@@ -14,6 +14,8 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -42,6 +44,10 @@ public class User implements Serializable {
 
     public int getUserId() {
         return userId;
+    }
+    
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
 
