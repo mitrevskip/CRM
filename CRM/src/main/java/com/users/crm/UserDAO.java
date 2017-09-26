@@ -47,6 +47,7 @@ public class UserDAO implements IUserDAO {
         entityManager.flush();
     }
 
+    @Override
     public boolean userExists(String userName, String email) {
         String hq1 = "FROM Article as usr1 WHERE usr1.userName = ? and usr1.email = >";
         int count = entityManager.createQuery(hq1).setParameter(1, userName)
