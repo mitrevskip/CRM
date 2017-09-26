@@ -5,7 +5,6 @@
  */
 package com.models.crm;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ROOMS")
 public class Rooms implements Serializable {
-    @Id @GeneratedValue @NotNull
+    @Id @GeneratedValue 
     @Column(name = "room ID")
     private int roomID;
     @Column(name = "capacity")

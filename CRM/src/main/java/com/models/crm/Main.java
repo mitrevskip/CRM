@@ -12,23 +12,10 @@ import org.hibernate.cfg.Configuration;
 public class Main {
 
     public static void main(String[] args) {
-        User user = new User();
-        user.setUserName("Petar");
-        user.setUserID(1);
-        user.setEmail("mitrevski.p@gmail.com");
-        user.setPassword("traktor");
-        user.setCreateTime(0);
+        User user = new User("mitrevski.p@gmail.com", "petarm", "traktor");
+        
 
-        try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
-            Session session = sessionFactory.openSession();
-            session.beginTransaction();
-            
-            session.save(user);
-            
-            session.getTransaction().commit();
-            session.close();
-            
-        }
+        
 
     }
 
