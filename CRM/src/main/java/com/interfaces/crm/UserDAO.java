@@ -6,12 +6,16 @@
 package com.interfaces.crm;
 
 import com.models.crm.User;
+import java.util.List;
 
-/**
- *
- * @author Mario HP
- */
+
 public interface UserDAO {
+    List<User> getAllUsers();
+    User getUserById(int userID);
+    void addUser(User user);
+    void updateUser(User user);
+    void deleteUser(User user);
+    boolean userExists(String userName, String email)
     
     void saveUserDAO(User u);
     void updateUserDAO(User u);

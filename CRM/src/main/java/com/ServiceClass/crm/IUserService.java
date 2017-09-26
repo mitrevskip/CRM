@@ -6,16 +6,14 @@
 package com.ServiceClass.crm;
 
 import com.models.crm.User;
+import java.util.List;
 
-/**
- *
- * @author Mario HP
- */
-public interface UserService {
+
+public interface IUserService {
     
-    User findById(int id);
-    
-    void saveUser(User u);
-    void updateUser(User u);
-    void deleteUser(User u);
+    List<User> getAllUsers();
+    User getUserById(int userID);
+    boolean addUser(User user);
+    void updateUser(User user);
+    void deleteUser(int userID);
 }

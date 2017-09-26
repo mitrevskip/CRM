@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-/**
- *
- * @author Mario HP
- */
+
 @Service("UserService")
 
 public class UserServiceImpl implements UserService {

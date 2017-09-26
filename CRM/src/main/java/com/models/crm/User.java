@@ -9,25 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author Petar
- */
+
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User implements Serializable {
 
-    public User() {
-    }
-
-    public User(String email, String userName, String password) {
-        this.email = email;
-        this.userName = userName;
-        this.password = password;
-    }
-
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userID;
     
     @Column(name = "email",unique = true)

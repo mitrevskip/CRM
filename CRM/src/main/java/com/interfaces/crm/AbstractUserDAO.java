@@ -5,10 +5,7 @@
  */
 package com.interfaces.crm;
 
-/**
- *
- * @author Mario HP
- */
+
 public abstract class AbstractUserDAO {
     
     public AbstractUserDAO()
