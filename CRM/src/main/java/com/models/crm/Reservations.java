@@ -18,9 +18,9 @@ import javax.persistence.Table;
 @Table(name = "RESERVATIONS")
 public class Reservations implements Serializable {
 
-    static final int MINUTES_PER_HOUR = 60;
-    static final int SECONDS_PER_MINUTE = 60;
-    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
+//    static final int MINUTES_PER_HOUR = 60;
+//    static final int SECONDS_PER_MINUTE = 60;
+//    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
 
     @Id @GeneratedValue
     @Column(name = "resID")
