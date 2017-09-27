@@ -9,18 +9,19 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ROOMS")
 public class Rooms implements Serializable {
-    @Id @GeneratedValue 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room ID")
     private int roomID;
     @Column(name = "capacity")
     private int capacity;
-    @Column(name = "room name")
+    @Column(name = "roomname")
     private String roomName;
     @Column (name = "description")
     private String description;
