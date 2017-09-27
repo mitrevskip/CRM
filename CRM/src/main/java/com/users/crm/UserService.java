@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService implements IUserService {
+    
 
     @Autowired
     private IUserService userDAO;
@@ -51,6 +52,11 @@ public class UserService implements IUserService {
         if(userDAO.userExists(userName, email))return false;
         else return true;
     }
+
+//    @Override
+//    public void findByLogin(String userName) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     
 

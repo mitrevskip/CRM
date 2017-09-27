@@ -21,4 +21,6 @@ public interface IUserService {
     void deleteUser(int userId);
 
     public boolean userExists(String userName, String email);
+    
+//    public void findByLogin(final String userName);
 }
