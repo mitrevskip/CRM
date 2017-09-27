@@ -3,20 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.models.crm;
+package com.rooms.crm;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Rooms")
+@Table(name = "ROOMS")
 public class Rooms implements Serializable {
-    @Id
+    @Id @GeneratedValue 
+    @Column(name = "room ID")
     private int roomID;
+    @Column(name = "capacity")
     private int capacity;
+    @Column(name = "room name")
     private String roomName;
+    @Column (name = "description")
     private String description;
 
     public int getRoomID() {
