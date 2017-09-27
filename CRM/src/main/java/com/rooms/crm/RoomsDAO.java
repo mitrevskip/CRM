@@ -56,18 +56,16 @@ public class RoomsDAO implements IRoomsDAO{
         
         entityManager.flush();   
     }
-    @Override
-    public void deleteRoom(Rooms room) {
-        entityManager.remove(getRoomsById(room));
-    }
-
+    
     @Override
     public Rooms getRoomsById(int roomID) {
         return entityManager.find(Rooms.class, roomID);
     }
 
-    
+    @Override
+    public void deleteRoom(int room) {
+        entityManager.remove(getRoomsById(room));
+    }
 
    
-    
 }
