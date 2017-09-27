@@ -29,8 +29,8 @@ public class UserDAO implements IUserDAO {
     @SuppressWarnings("unchecked")
     @Override
     public List<User> getAllUsers() {
-        String hq1 = "FROM User as usr1 ORDER BY usr1.userId";
-        return (List<User>) entityManager.createQuery(hq1).getResultList();
+        String hql = "FROM User as usr1 ORDER BY usr1.userId";
+        return (List<User>) entityManager.createQuery(hql).getResultList();
     }
 
     @Override
@@ -55,8 +55,8 @@ public class UserDAO implements IUserDAO {
     
     @Override
     public boolean userExists(String userName, String email) {
-        String hq1 = "FROM Article as usr1 WHERE usr1.userName = ? and usr1.email = ?";
-        int count = entityManager.createQuery(hq1).setParameter(1, userName)
+        String hql = "FROM Article as usr1 WHERE usr1.userName = ? and usr1.email = ?";
+        int count = entityManager.createQuery(hql).setParameter(1, userName)
                 .setParameter(2, email).getResultList().size();
         return count > 0 ? true : false;
     }
