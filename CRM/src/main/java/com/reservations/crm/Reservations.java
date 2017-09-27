@@ -1,12 +1,12 @@
 package com.reservations.crm;
 
 import java.io.Serializable;
-import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.Period;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,48 +15,80 @@ import javax.persistence.Table;
  * @author Petar
  */
 @Entity
-@Table(name = "RESERVATIONS")
+@Table(name = "Reservations")
 public class Reservations implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "ID")
+    private Long id;
 
 //    static final int MINUTES_PER_HOUR = 60;
 //    static final int SECONDS_PER_MINUTE = 60;
 //    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
-
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "resID")
     private int resID;
-    
-    @Column(name = "roomID")
+
+    Instant now = Instant.now();
+
+    @Column
     private int roomID;
-    
+
     @Column(name = "meeting starts")
     LocalDateTime meetingStart;
-    
+
     @Column(name = "meeting ends")
     LocalDateTime meetingEnd;
+//
+//    @Column(name = "meeting length")
+//    Duration meetingLength = getMeetingLength(meetingStart, meetingEnd);
+//
+//    @Column(name = "time to meeting")
+//    Duration timeToMeeting = getTimeToMeeting(now, meetingStart);
+
     
-    @Column(name = "meeting length")
-    Duration meetingLength;
 
-    Period period = getPeriod(meetingStart, meetingEnd);
-//    long time[] = getTime(meetingStart, meetingEnd);
 
-    private static Period getPeriod(LocalDateTime meetingStart, LocalDateTime now) {
-        return Period.between(meetingStart.toLocalDate(), now.toLocalDate());
+    public int getResID() {
+        return resID;
     }
 
-//    private static long[] getTime(LocalDateTime now, LocalDateTime meetingStart) {
-//        LocalDateTime today = LocalDateTime.of(now.getYear(),
-//                now.getMonthValue(), now.getDayOfMonth(), meetingStart.getHour(), meetingStart.getMinute(), meetingStart.getSecond());
-//        Duration duration = Duration.between(now, meetingStart);
-//
-//        long seconds = duration.getSeconds();
-//
-//        long hours = seconds / SECONDS_PER_HOUR;
-//        long minutes = ((seconds % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE);
-//        long secs = (seconds % SECONDS_PER_MINUTE);
-//
-//        return new long[]{hours, minutes, secs};
-//    }
+    public void setResID(int resID) {
+        this.resID = resID;
+    }
 
+    public int getRoomID() {
+        return roomID;
+    }
+
+    public void setRoomID(int roomID) {
+        this.roomID = roomID;
+    }
+
+    public LocalDateTime getMeetingStart() {
+        return meetingStart;
+    }
+
+    public void setMeetingStart(LocalDateTime meetingStart) {
+        this.meetingStart = meetingStart;
+    }
+
+    public LocalDateTime getMeetingEnd() {
+        return meetingEnd;
+    }
+
+    public void setMeetingEnd(LocalDateTime meetingEnd) {
+        this.meetingEnd = meetingEnd;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
