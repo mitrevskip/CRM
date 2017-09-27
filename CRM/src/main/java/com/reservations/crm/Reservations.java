@@ -1,10 +1,12 @@
-package com.models.crm;
+package com.reservations.crm;
 
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Period;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,15 +18,24 @@ import javax.persistence.Table;
 @Table(name = "RESERVATIONS")
 public class Reservations implements Serializable {
 
-    static final int MINUTES_PER_HOUR = 60;
-    static final int SECONDS_PER_MINUTE = 60;
-    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
+//    static final int MINUTES_PER_HOUR = 60;
+//    static final int SECONDS_PER_MINUTE = 60;
+//    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
 
-    @Id
+    @Id @GeneratedValue
+    @Column(name = "resID")
     private int resID;
+    
+    @Column(name = "roomID")
     private int roomID;
+    
+    @Column(name = "meeting starts")
     LocalDateTime meetingStart;
+    
+    @Column(name = "meeting ends")
     LocalDateTime meetingEnd;
+    
+    @Column(name = "meeting length")
     Duration meetingLength;
 
     Period period = getPeriod(meetingStart, meetingEnd);
