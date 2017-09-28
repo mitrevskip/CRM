@@ -1,5 +1,4 @@
 
-import com.users.crm.UserController;
 import org.springframework.boot.SpringApplication;
 
 /*
@@ -15,7 +14,7 @@ import org.springframework.boot.SpringApplication;
 public class Main {
     
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(UserController.class, args);
+        SpringApplication.run(com.roles.crm.RolesController.class, args);
        
         
        

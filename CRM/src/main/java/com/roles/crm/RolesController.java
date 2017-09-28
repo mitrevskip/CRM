@@ -6,8 +6,9 @@
 package com.roles.crm;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,40 +17,28 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @EnableAutoConfiguration
+@RequestMapping("/rolesHome")
 public class RolesController {
+    
+    @Autowired
+    RolesService rolesService;
 
-    @RequestMapping(value = "/methodRoles")
-    @ResponseBody
-    String rolesControl() {
-        return "controling roles.";
+    @RequestMapping("/getAllRoles")
+    public String getAllRoles(Roles roles) {
+        List<Roles> getRoles = rolesService.getAllRoles();
+        
+        return "The roles are 1: User, 2: Administrator, 3: SuperAdmnistrator" + getRoles;
     }
 
-    @Controller
-    @EnableAutoConfiguration
-    public class RolesController {
-
-        @RequestMapping("/")
-        public List<Roles> getAllRoles() {
-            return "List<Roles>";
-        }
-
-        @RequestMapping("/employee-management/employees/add")
-        public String addEmployee(EmployeeVO employee) {
-            //application code
-            return "employeesDetail";
-        }
-
-        @RequestMapping("/employee-management/employees/update")
-        public String updateEmployee(EmployeeVO employee) {
-            //application code
-            return "employeesDetail";
-        }
-
-        @RequestMapping(value = {"/employee-management/employees/remove", "/employee-management/employees/delete"})
-        public String removeEmployee(@RequestParam("id") String employeeId) {
-            //application code
-            return "employeesList";
-        }
+    @RequestMapping(value = "/addRoles", consumes = {"application/JSON", "application/XML"})
+    String addRoles() {
+        //application code
+        return "Adding roles";
     }
+    
+//    @RequestMapping(value =)
 
+    
 }
+
+
