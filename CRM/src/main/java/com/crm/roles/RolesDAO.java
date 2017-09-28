@@ -34,7 +34,7 @@ public class RolesDAO implements IRolesDAO {
     @SuppressWarnings("unchecked")
     @Override
     public List<Roles> getAllRoles() {
-        String hql = "FROM Roles";
+        String hql = "FROM Roles as role1 ORDER BY role1.rolesId";
         return (List<Roles>) entityManager.createQuery(hql).getResultList();
     }
 
