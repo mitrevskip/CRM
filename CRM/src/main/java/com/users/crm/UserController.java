@@ -28,31 +28,4 @@ public class UserController {
     }
     
     
-    
-    
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(UserController.class, args);
-        SpringApplication.run(com.reservations.crm.ReservationsController.class, args);
-        
-       
-        
-        
-        
-        
-//        IUserDAO iUserDAO = new UserDAO();
-//       
-//       //Add new Users
-//       
-//       User petar = new User();
-//       petar.setEmail("mitrevski.p@gmail.com");
-//       petar.setPassword("terenec");
-//       petar.setUserName("mitrevski");
-//       petar.setUserId(2);
-//       
-//       iUserDAO.addUser(petar);
-//       
-        
-        
-    }
-    
 }
