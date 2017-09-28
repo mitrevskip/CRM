@@ -5,10 +5,12 @@
  */
 package com.users.crm;
 
+import java.util.List;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+
 
 /**
  *
@@ -21,15 +23,9 @@ public class UserController {
     
     @RequestMapping("/")
     @ResponseBody
-    String home() {
-        return "Hello World";
+    String userController() {
+        return "Controlling Users";
     }
     
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(UserController.class, args);
-    
-      
-        
-    }
     
 }

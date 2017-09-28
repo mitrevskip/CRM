@@ -28,4 +28,9 @@ public class RoomsController {
         SpringApplication.run(RoomsController.class, args);
     }
     
+    @RequestMapping("/")
+    @ResponseBody
+    String room() {
+        return "Controling rooms";
+    }
 }

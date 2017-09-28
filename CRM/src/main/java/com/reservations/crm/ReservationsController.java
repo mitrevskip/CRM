@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.reservations.crm;
+
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
@@ -15,16 +16,12 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @EnableAutoConfiguration
-public class RolesControler {
+public class ReservationsController {
 
-    @RequestMapping("/")
+    @RequestMapping("com.reservations.crm.ReservationsController.class")
     @ResponseBody
-    String rolescontrol() {
-        return "controling roles.";
+    String resController() {
+        return "Controlling reservations";
+
     }
-    
-    public static void main(String[] args) {
-        SpringApplication.run(RolesControler.class, args);
-    }
-    
 }
