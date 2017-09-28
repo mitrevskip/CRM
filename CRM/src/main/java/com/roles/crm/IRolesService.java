@@ -22,5 +22,5 @@ public interface IRolesService {
     
     void deleteRoles(int rolesId);
     
-    public boolean rolesExist(int rolesId, int administrator);
+    public boolean rolesExists(int rolesId, int administrator);
 }
