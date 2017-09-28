@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
  * @author Petar
  */
 @Service
-@EnableAutoConfiguration
 public class RolesService implements IRolesService {
 
     @Autowired

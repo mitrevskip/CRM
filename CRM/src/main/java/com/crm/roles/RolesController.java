@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
  * @author Petar
  */
 @Controller
-@EnableAutoConfiguration
 @RequestMapping("/rolesHome")
 public class RolesController {
     
