@@ -1,3 +1,5 @@
+package com.crm;
+
 
 
 
@@ -14,7 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Petar
  */
-@SpringBootApplication(scanBasePackages={"com."})
+@SpringBootApplication
 public class Main {
     
     public static void main(String[] args) throws Exception {
