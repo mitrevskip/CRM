@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.crm.roles;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -14,20 +14,32 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "ROLES")
+@Table(name = "Roles")
 public class Roles implements Serializable {
-    @Id @GeneratedValue
-    @Column(name = "roleID")
-    private int roleID;
-    @Column(name = "admin")
+    
+    @Id
+    @GeneratedValue
+    @Column(name = "rolesID")
+    private int rolesID;
+
+    @Column(name = "administrator")
     private int administrator;
-
-    public int getRoleID() {
-        return roleID;
+    
+    public int getRolesID() {
+        return rolesID;
     }
 
-    public void setRoleID(int roleID) {
-        this.roleID = roleID;
+    public void setRoleID(int rolesID) {
+        this.rolesID = rolesID;
     }
+
+    public int getAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(int administrator) {
+        this.administrator = administrator;
+    }
+    
     
 }
