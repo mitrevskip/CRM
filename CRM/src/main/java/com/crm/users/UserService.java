@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.users.crm;
+package com.crm.users;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService implements IUserService {
+    
 
     @Autowired
     private IUserService userDAO;
@@ -27,12 +28,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public synchronized boolean addUser(User user) {
+    public boolean addUser(User user) {
         if (userDAO.userExists(user.getUserName(), user.getEmail())) {
             return false;
         } else {
             userDAO.addUser(user);
-            return true;
+           return true;
         }
     }
 
@@ -48,8 +49,14 @@ public class UserService implements IUserService {
 
     @Override
     public boolean userExists(String userName, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(userDAO.userExists(userName, email))return false;
+        else return true;
     }
+
+//    @Override
+//    public void findByLogin(String userName) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     
 
