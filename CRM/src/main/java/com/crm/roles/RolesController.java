@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.crm.roles;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class RolesController {
     @Autowired
     RolesService rolesService;
 
-    @RequestMapping("/getAllRoles")
+    @RequestMapping("RolesService/getAllRoles")
     public String getAllRoles(Roles roles) {
         List<Roles> getRoles = rolesService.getAllRoles();
         

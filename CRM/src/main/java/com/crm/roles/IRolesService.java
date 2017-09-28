@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.crm.roles;
 
 import java.util.List;
 
@@ -11,13 +11,16 @@ import java.util.List;
  *
  * @author Petar
  */
-public interface IRolesDAO {
-    
+public interface IRolesService {
     List<Roles> getAllRoles();
-    Roles getRolesById(int administrator);
-    void addRoles(Roles roles);
-    void updateRoles(Roles roles);
-    void deleteRoles(int administrator);
-    boolean rolesExists(int rolesId, int administrator);
     
+    Roles getRolesById(int roleId);
+    
+    boolean addRoles(Roles roles);
+    
+    void updateRoles(Roles roles);
+    
+    void deleteRoles(int rolesId);
+    
+    public boolean rolesExists(int rolesId, int administrator);
 }
