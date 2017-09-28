@@ -15,26 +15,25 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author Petar
  */
-@SpringBootApplication
-@RestController
+@Controller
 @RequestMapping("/rolesHome")
 public class RolesController {
     
     @Autowired
-    IRolesService rolesService;
+    RolesService rolesService;
 
-    @GetMapping("RolesService/getAllRoles")
-    public String getAllRoles() {
+    @RequestMapping("RolesService/getAllRoles")
+    public String getAllRoles(Roles roles) {
         List<Roles> getRoles = rolesService.getAllRoles();
         
         return "The roles are 1: User, 2: Administrator, 3: SuperAdmnistrator" + getRoles;
     }
 
-//    @RequestMapping(value = "/addRoles", consumes = {"application/JSON", "application/XML"})
-//    String addRoles() {
-//        //application code
-//        return "Adding roles";
-//    }
+    @RequestMapping(value = "/addRoles", consumes = {"application/JSON", "application/XML"})
+    String addRoles() {
+        //application code
+        return "Adding roles";
+    }
     
 //    @RequestMapping(value =)
 

@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Petar
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages={"com."})
 public class Main {
     
     public static void main(String[] args) throws Exception {
