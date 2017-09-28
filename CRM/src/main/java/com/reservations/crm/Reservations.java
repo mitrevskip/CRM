@@ -24,9 +24,6 @@ public class Reservations implements Serializable {
     @Column(name = "ID")
     private Long id;
 
-//    static final int MINUTES_PER_HOUR = 60;
-//    static final int SECONDS_PER_MINUTE = 60;
-//    static final int SECONDS_PER_HOUR = SECONDS_PER_MINUTE * MINUTES_PER_HOUR;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "resID")

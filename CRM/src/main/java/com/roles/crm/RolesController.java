@@ -19,12 +19,10 @@ public class RolesController {
 
     @RequestMapping("/")
     @ResponseBody
-    String rolescontrol() {
+    String rolesControl() {
         return "controling roles.";
     }
     
-    public static void main(String[] args) {
-        SpringApplication.run(RolesController.class, args);
-    }
+    
     
 }
