@@ -1,5 +1,8 @@
 
+
+
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,10 +14,11 @@ import org.springframework.boot.SpringApplication;
  *
  * @author Petar
  */
+@SpringBootApplication(scanBasePackages={"com."})
 public class Main {
     
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(com.roles.crm.RolesController.class, args);
+        SpringApplication.run(com.crm.roles.RolesController.class, args);
        
         
        
