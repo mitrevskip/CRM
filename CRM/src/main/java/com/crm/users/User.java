@@ -1,5 +1,5 @@
 
-package com.users.crm;
+package com.crm.users;
 
 import java.io.Serializable;
 import javax.persistence.Column;

@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.crm.roles;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,17 +15,19 @@ import org.springframework.stereotype.Service;
  * @author Petar
  */
 @Service
+@EnableAutoConfiguration
 public class RolesService implements IRolesService {
 
     @Autowired
     private IRolesService rolesDAO;
 
     @Override
-    public Roles getRolesById(int RolesId) {
-        Roles obj = rolesDAO.getRolesById(RolesId);
+    public Roles getRolesById(int rolesId) {
+        Roles obj = rolesDAO.getRolesById(rolesId);
         return obj;
     }
 
+    @Autowired
     @Override
     public List<Roles> getAllRoles() {
         return rolesDAO.getAllRoles();
@@ -32,7 +35,7 @@ public class RolesService implements IRolesService {
 
     @Override
     public synchronized boolean addRoles (Roles roles) {
-        if(rolesDAO.rolesExist(roles.getRolesID(), roles.getAdministrator())){
+        if(rolesDAO.rolesExists(roles.getRolesID(), roles.getAdministrator())){
             return false;
         }else{
             rolesDAO.addRoles(roles);
@@ -51,7 +54,7 @@ public class RolesService implements IRolesService {
     }
     
     @Override
-    public boolean rolesExist(int rolesId, int administrator) {
+    public boolean rolesExists(int rolesId, int administrator) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

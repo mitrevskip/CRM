@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.roles.crm;
+package com.crm.roles;
 
 import java.util.List;
 
@@ -22,5 +22,5 @@ public interface IRolesService {
     
     void deleteRoles(int rolesId);
     
-    public boolean rolesExist(int rolesId, int administrator);
+    public boolean rolesExists(int rolesId, int administrator);
 }
