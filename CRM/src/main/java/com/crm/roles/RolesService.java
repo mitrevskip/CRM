@@ -7,7 +7,6 @@ package com.crm.roles;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,11 +14,10 @@ import org.springframework.stereotype.Service;
  * @author Petar
  */
 @Service
-@EnableAutoConfiguration
 public class RolesService implements IRolesService {
 
     @Autowired
-    private IRolesService rolesDAO;
+    private IRolesDAO rolesDAO;
 
     @Override
     public Roles getRolesById(int rolesId) {
