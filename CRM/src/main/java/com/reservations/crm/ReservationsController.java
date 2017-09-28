@@ -14,18 +14,14 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author Petar
  */
-
 @Controller
 @EnableAutoConfiguration
 public class ReservationsController {
-    
-    @RequestMapping("/")
+
+    @RequestMapping("com.reservations.crm.ReservationsController.class")
     @ResponseBody
     String resController() {
         return "Controlling reservations";
-    }
-    
-    public static void main(String[] args) {
-        SpringApplication.run(ReservationsController.class, args);
+
     }
 }

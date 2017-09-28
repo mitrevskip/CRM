@@ -4,14 +4,17 @@ package com.users.crm;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Persistence;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "users")
+@Table(name = "Users")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,6 +42,10 @@ public class User implements Serializable {
 //        this.userName = userName;
 //        this.password = password;
 //    }
+
+    public User() {
+        
+    }
     
     
 
@@ -74,6 +81,21 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+//    public void persist(Object object) {
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_CRM_jar_1.0-SNAPSHOTPU");
+//        EntityManager em = emf.createEntityManager();
+//        em.getTransaction().begin();
+//        try {
+//            em.persist(object);
+//            em.getTransaction().commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            em.getTransaction().rollback();
+//        } finally {
+//            em.close();
+//        }
+//    }
 
 }
 
