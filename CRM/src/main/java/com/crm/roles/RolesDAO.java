@@ -8,43 +8,35 @@ package com.crm.roles;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
  * @author Petar
  */
 @Transactional
-@Repository
 public class RolesDAO implements IRolesDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    @RequestMapping
+
     @Override
     public Roles getRolesById(int rolesId) {
         return entityManager.find(Roles.class, rolesId);
     }
-    
-    @RequestMapping(value = "/methodGetAll")  
-    @SuppressWarnings("unchecked")
+
     @Override
     public List<Roles> getAllRoles() {
-        String hql = "FROM Roles as role1 ORDER BY role1.rolesId";
+        String hql = "FROM Roles";
         return (List<Roles>) entityManager.createQuery(hql).getResultList();
     }
 
-    @RequestMapping(value = "/methodAddRoles")
     @Override
     public void addRoles(Roles roles) {
         entityManager.persist(roles);
     }
-    
-    @RequestMapping(value = "/methodUpdateRoles")
+
     @Override
     public void updateRoles(Roles roles) {
         Roles role1 = getRolesById(roles.getRolesID());
@@ -53,16 +45,15 @@ public class RolesDAO implements IRolesDAO {
         entityManager.flush();
     }
 
-    @RequestMapping(value = "/methodDeleteRoles")
     @Override
     public void deleteRoles(int rolesId) {
         entityManager.remove(getRolesById(rolesId));
     }
 
-    @RequestMapping(value = "/methodRolesExists")
+
     @Override
     public boolean rolesExists(int rolesId, int administrator) {
-        String hql = "FROM Roles as roles1 WHERE roles1.rolesId = ? and roles1.administrator = ?";
+        String hql = "FROM Roles";
         int count = entityManager.createQuery(hql).setParameter(1, rolesId)
                 .setParameter(2, administrator).getResultList().size();
         return count > 0 ? true : false;
