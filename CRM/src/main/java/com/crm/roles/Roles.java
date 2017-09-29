@@ -7,14 +7,13 @@ package com.crm.roles;
 
 import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 
-@Entity
-@Table(name = "Roles")
+
+@Component
 public class Roles implements Serializable {
     
     @Id
