@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class RolesService implements IRolesService {
 
     @Autowired
-    private IRolesService rolesDAO;
+    private IRolesDAO rolesDAO;
 
     @Override
     public Roles getRolesById(int rolesId) {

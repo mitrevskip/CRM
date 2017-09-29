@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.*;
  * @author Petar
  */
 @Controller
+@EnableAutoConfiguration
 @RequestMapping("/rolesHome")
 public class RolesController {
     
     @Autowired
-    RolesService rolesService;
+    IRolesService rolesService;
 
     @RequestMapping("RolesService/getAllRoles")
     public String getAllRoles(Roles roles) {
